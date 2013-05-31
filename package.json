@@ -1,0 +1,17 @@
+{
+  "name": "cleanjson",
+  "description": "format JSON document from stdin as 'comma-first' JSON",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:inadarei/cleanjson.git"
+  },
+  "author": "Irakli Nadareishvili <irakli@gmail.com> (http://freshblurbs.com)",
+  "contributors": [], 
+  "bin": {
+    "cleanjson": "./bin/cleanjson"
+  },
+  "main": "./lib/cleanjson.js",
+  "engines": ["node >=0.8.0"],
+  "keywords": ["json", "command", "shell"]
+}

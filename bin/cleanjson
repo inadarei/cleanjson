@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+var cj = require("../lib/cleanjson.js");
+
+cj.init();
