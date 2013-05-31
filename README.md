@@ -30,3 +30,13 @@ cj.clean(input, function(err, cleanJSON) {
   
 });
 ```
+
+will produce following output:
+
+```javascript
+{
+  "a": 13123
+, "b": "13123"
+, "ccc": 112
+}
+```
