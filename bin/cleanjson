@@ -1,5 +1,27 @@
 #!/usr/bin/env node
 
-var cj = require("../lib/cleanjson.js");
+var cj = require("../lib/cleanjson.js")
+  , jsonData  = ""
+  , stdin = process.openStdin();
 
-cj.init();
+
+stdin.on('data', function(chunk) {
+  jsonData += chunk;
+});
+
+stdin.on('end', function() {  
+  cj.clean(jsonData, function(err, cleanJSON) {
+    if (err) {
+      process.stdout.write ("ERROR: Malformed JSON Document provided as input. Exiting.\n");
+      process.exit(1);
+    }
+    
+    process.stdout.write(cleanJSON);
+    process.stdout.write("\n");  
+    process.exit(0);
+  });
+});
+
+stdin.setEncoding("utf8");
+stdin.resume();      
+
